@@ -1,0 +1,15 @@
+Host vm01
+	User ucu
+	HostName 10.0.0.11
+	Port 222
+	IdentityFile ~/.ssh/id_rsa
+	StrictHostKeyChecking no
+	UserKnownHostsFile /dev/null
+
+Host vm02
+	User ucu
+	HostName 10.0.0.12
+	Port 222
+	IdentityFile ~/.ssh/id_rsa
+	StrictHostKeyChecking no
+	UserKnownHostsFile /dev/null

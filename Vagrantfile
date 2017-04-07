@@ -25,6 +25,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Provision 
   config.vm.provision "shell", inline: <<-SHELL
     echo "Vagrant provision at $(date +%F-%H.%M.%S)" > /tmp/created
+    adduser --gecos "" ucu
+    echo ucu:pass | chpasswd
+    cp /vagrant/files/sshd_config /etc/ssh/
+    service ssh restart
+    cp /vagrant/files/ssh_config /etc/ssh/
+    chmod o+w /vagrant -R
+    su ucu
+    if ! [ -f "/vagrant/files/ssh" ]
+      then
+        ssh-keygen -t rsa -N '' -f /vagrant/files/ssh/id_rsa
+    fi
+    cp /vagrant/files/ssh /etc/ssh/
+        
   SHELL
 
 end
