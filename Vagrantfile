@@ -14,10 +14,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Provider
-  (1..3).each do |n|
-    config.vm.define "srv0#{n}" do |srv|
+  (1..2).each do |n|
+    config.vm.define "vm0#{n}" do |srv|
         srv.vm.box ="ubuntu/trusty64"
-        srv.vm.hostname = "srv0#{n}"
+        srv.vm.hostname = "vm0#{n}"
         srv.vm.network "private_network", ip: "10.0.0.1#{n}"
     end
   end
