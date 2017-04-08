@@ -1,3 +1,10 @@
+# Materia: INSTALACIÓN CONFIGURACIÓN Y ADM.DE LINUX
+# Tarea: Generar entorno de SSH
+# Integrantes: 
+#   Felipe Olivera
+#   Juan Sorondo
+
+
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -40,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     cp /vagrant/files/ssh/id_rsa.pub /home/ucu/.ssh/authorized_keys
     chown -R ucu /home/ucu/.ssh
     chmod 700 /home/ucu/.ssh
-    chmod -R 600 /home/ucu/.ssh/*
+    chmod 600 /home/ucu/.ssh/*
         
   SHELL
 
